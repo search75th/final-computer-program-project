@@ -1,0 +1,55 @@
+
+import event, time, cyberpi, gamepad, mbot2
+
+@event.start
+def on_start():
+    while True:
+      if gamepad.is_key_pressed('L1'):
+        mbot2.servo_set(46,"S4")
+
+      else:
+        if gamepad.is_key_pressed('L2'):
+          mbot2.servo_set(150,"S4")
+
+        else:
+          if gamepad.is_key_pressed('R1'):
+            mbot2.servo_set(170,"S4")
+
+          else:
+            if gamepad.is_key_pressed('Up'):
+              mbot2.drive_power(-100, 100)
+
+            else:
+              if gamepad.is_key_pressed('Down'):
+                mbot2.drive_power(100, -100)
+
+              else:
+                if gamepad.is_key_pressed('Left'):
+                  mbot2.drive_power(50, -50)
+
+                else:
+                  if gamepad.is_key_pressed('Right'):
+                    mbot2.drive_power(50, 50)
+
+                  else:
+                    if gamepad.is_key_pressed('N2'):
+                      mbot2.motor_set(100,"all")
+
+                    else:
+                      if gamepad.is_key_pressed('N3'):
+                        mbot2.motor_set(-100,"all")
+
+                      else:
+                        if gamepad.is_key_pressed('N1'):
+                          mbot2.servo_set(45,"S1")
+                          mbot2.servo_set(135,"S2")
+
+                        else:
+                          if gamepad.is_key_pressed('N4'):
+                            mbot2.servo_set(100,"S1")
+                            mbot2.servo_set(70,"S2")
+
+                          else:
+                            mbot2.EM_stop("ALL")
+                            mbot2.motor_stop("all")
+
